@@ -7,16 +7,20 @@ let time = 0;
 let isTimerOn = false;
 let isHardMode = false;
 
+let foodCount = 17;
 
 var bgm = new Audio('./src/bgm.mp3');
 
+
+$('h5').text(foodCount);
+
 function levelCtrl(e) {
     switch($(e.target).text()) {
-        case "Easy":    // 3min
-            endTime = 180600;
+        case "Easy":    // 2min
+            endTime = 120600;
         break;
-        case "Medium":  // 1min 30sec
-            endTime = 90400;
+        case "Medium":  // 1min
+            endTime = 60400;
         break;
         case "Hard":    // 50sec
             endTime = 50400;
@@ -42,6 +46,8 @@ function gameReset(e) {
     $("#gameover").hide();
     $('#levelSelect').css("display", "flex");
     characterReset();
+    $('h5').text(foodCount);
+
 }
 
 function endGame() {
@@ -52,6 +58,7 @@ function endGame() {
     gameOver = true;
     isTimerOn = false;
     isHardMode = false;
+    foodCount = 17;
 
     bgm.pause();
     bgm.currentTime = 0;
@@ -90,6 +97,9 @@ function detectHit() {
                 character.height(character.height()+10);
                 character.width(character.width()+10);
                 console.log("Hit!!!");  // log
+
+                foodCount--;
+                $('h5').text(foodCount);
                 
                 // check the character size
                 if(detectCharacterSize()) {
