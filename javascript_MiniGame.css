@@ -87,7 +87,7 @@ h5 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 5vh;
+    row-gap: 6vh;
     background-color:#ec3c3c;
     font-size: 60px;
 }
@@ -148,4 +148,29 @@ h5 {
 
 #gameover {
     background-color: #ec3c3c;
+}
+
+.instruction {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 36px;
+}
+
+.instruction > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.instruction > div > div {
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    font-size: 30px;
+}
+
+.instruction aside {
+    display: flex;
+    flex-direction: column;
 }
