@@ -7,6 +7,8 @@ let time = 0;
 let isTimerOn = false;
 let isHardMode = false;
 
+let foodCount = 17;
+
 var bgm = new Audio('./src/bgm.mp3');
 
 function levelCtrl(e) {
